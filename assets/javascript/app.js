@@ -1,34 +1,64 @@
-            	var beaches = [
-  ['Los Angeles', 34.0522, -118.2437, 4],
-  ['New York City', 40.7128, -74.0059, 5],
-  ['Boston', 42.3601, -151.157507, 3],
-  ['Miami', 25.7617, -80.1918, 2],
-  ['Pierre', 44.3683, -100.3510, 1],
-  ['Austin', 30.2672, -97.7431, 1],
-  ['Montgomery', 32.3668, -86.3000, 1],
-  ['Cheyenne', 41.1400, -104.8202, 1]
-];
+ ////////////CITIES ARRAY////////////////////
+  var cities = [
+	  ['Los Angeles', 34.0522, -118.2437],
+	  ['New York City', 40.7128, -74.0059],
+	  ['Boston', 42.3601, -151.157507],
+	  ['Miami', 25.7617, -80.1918],
+	  ['Pierre', 44.3683, -100.3510],
+	  ['Austin', 30.2672, -97.7431],
+	  ['Montgomery', 32.3668, -86.3000],
+	  ['Cheyenne', 41.1400, -104.8202]
+  ];
+
+/////////ADD TEXT CONTENT//////////////////
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">XCit shows the following sentiment for your search</h1>'+
+      '<div id="bodyContent">'+
+     
+      '</div>';
 
 
+
+
+/////////SET THE MAP////////////////////////
       function initMap() {
-
 
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {
             center: {lat: 37.0902, lng: -95.7129},
             zoom: 4,
+            styles: [
+				      {
+				        featureType: 'all',
+				        stylers: [
+				          { saturation: -80 }
+				        ]
+				      },{
+				        featureType: 'road.arterial',
+				        elementType: 'geometry',
+				        stylers: [
+				          { hue: '#00ffee' },
+				          { saturation: 90 }
+				        ]
+				      },{
+				        featureType: 'poi.business',
+				        elementType: 'labels',
+				        stylers: [
+				          { visibility: 'on' }
+				        ]
+				      }
+				    ]
         });
-    //       var marker = new google.maps.Marker({
-		  //   position: nyc,
-		  //   map: map,
-		  //   title: 'Hello World!'
-  		// });
-          setMarkers(map);
+
+ 
+        setMarkers(map); //CALL THE MARKERS
 
       }
 
 
-function setMarkers(map) {
+function setMarkers(map) {//THIS FUNCTION ADDS MARKERS TO THE MAP
   // Adds markers to the map.
 
   // Marker sizes are expressed as a Size of X,Y where the origin of the image
@@ -37,7 +67,7 @@ function setMarkers(map) {
   // Origins, anchor positions and coordinates of the marker increase in the X
   // direction to the right and in the Y direction down.
   var image = {
-    url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+    url: ' https://www.google.com/mapfiles/marker.png',
     // This marker is 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(20, 32),
     // The origin for this image is (0, 0).
@@ -52,26 +82,23 @@ function setMarkers(map) {
     coords: [1, 1, 1, 20, 18, 20, 18, 1],
     type: 'poly'
   };
-  for (var i = 0; i < beaches.length; i++) {
-    var beach = beaches[i];
+  for (var i = 0; i < cities.length; i++) {
+    var city = cities[i];
     var marker = new google.maps.Marker({
-      position: {lat: beach[1], lng: beach[2]},
+      position: {lat: city[1], lng: city[2]},
       map: map,
       icon: image,
       shape: shape,
-      title: beach[0],
-      zIndex: beach[3]
+      title: city[0], 
     });
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
   }
+   marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+
 }
 
-
-
-       // 	var la = {lat: 34.0522, lng: -118.2437};
-      	// var nyc = {lat: 40.7128, lng: -74.0059};
-      	// var bos = {lat: 42.3601, lng: -71.0589};
-      	// var mia = {lat: 25.7617, lng: -80.1918};
-      	// var pierre = {lat: 44.3683, lng: -100.3510};
-      	// var austin = {lat: 30.2672, lng: -97.7431};
-      	// var montgomery = {lat: 32.3668, lng: -86.3000};
-      	// var cheyenne = {lat: 41.1400, lng: -104.8202};
