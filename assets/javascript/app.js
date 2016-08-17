@@ -21,7 +21,6 @@
 
 
 
-
 /////////SET THE MAP////////////////////////
       function initMap() {
 
