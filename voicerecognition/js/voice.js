@@ -1,8 +1,4 @@
 var grabVoiceToText = "";
-var langs =
-
-
-
 
 showInfo('info_start');
 
