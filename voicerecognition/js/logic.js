@@ -1,6 +1,6 @@
 
  $(".text_process_button").click(function(){
-		var textString = $("#searchInput").val().trim();
+		var textString = $("#results").val().trim();
 		console.log(textString);
 
         $.ajax({
@@ -10,7 +10,7 @@
             data: {text: textString},
             datatype: 'json',
             success: function (result) {
-            	
+
 				console.log(result);
 				console.log(result.type);
 				console.log(result.score);
@@ -22,8 +22,8 @@
 				console.log((Math.abs(result.score*100)));
 				if(result.type==="negative"){
 					$('#bar').addClass("progress-bar-danger");
-				}	
-				
+				}
+
 					else if(result.type==="positive"){
 						$('#bar').addClass("progress-bar-success");
 					}
@@ -41,9 +41,9 @@
 
 				$("#word1").html(result.keywords["0"].word+"= "+result.keywords["0"].score);
 				$("#word2").html(result.keywords["1"].word+"= "+result.keywords["1"].score);
-				$("#word3").html(result.keywords["2"].word+"= "+result.keywords["2"].score);	
+				$("#word3").html(result.keywords["2"].word+"= "+result.keywords["2"].score);
 				$("#word4").html(result.keywords["3"].word+"= "+result.keywords["3"].score);
-				$("#word5").html(result.keywords["4"].word+"= "+result.keywords["4"].score);	
+				$("#word5").html(result.keywords["4"].word+"= "+result.keywords["4"].score);
             },
             error: function (err) {
                 alert(err);
@@ -64,7 +64,7 @@
     //         data: {text: $("#whatever").val()}, // Additional parameters he
     //         datatype: 'json',
     //         success: function (result) {
-            	
+
 				// console.log(result);
 				// console.log(result.type);
 				// console.log(result.score);
@@ -80,9 +80,9 @@
 
 				// $("#word1").html(result.keywords["0"].word+"= "+result.keywords["0"].score);
 				// $("#word2").html(result.keywords["1"].word+"= "+result.keywords["1"].score);
-				// $("#word3").html(result.keywords["2"].word+"= "+result.keywords["2"].score);	
+				// $("#word3").html(result.keywords["2"].word+"= "+result.keywords["2"].score);
 				// $("#word4").html(result.keywords["3"].word+"= "+result.keywords["3"].score);
-				// $("#word5").html(result.keywords["4"].word+"= "+result.keywords["4"].score);	
+				// $("#word5").html(result.keywords["4"].word+"= "+result.keywords["4"].score);
     //         },
     //         error: function (err) {
     //             alert(err);
