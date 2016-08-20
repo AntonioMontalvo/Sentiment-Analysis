@@ -1,7 +1,7 @@
 
  $(".text_process_button").click(function(){
-		var textString = $("#final_span").val().trim();
-    console.log(textString)
+		var textString = $("#text_input").val().trim();
+
 		console.log(textString);
 
         $.ajax({
