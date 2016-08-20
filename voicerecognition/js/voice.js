@@ -187,8 +187,8 @@ function emailButton() {
   } else {
     createEmail();
   }
-  email_button.style.display = 'none';
-  email_info.style.display = 'inline-block';
+
+
   showInfo('');
 }
 function startButton(event) {
@@ -226,9 +226,9 @@ function showButtons(style) {
   }
   current_style = style;
 
-  email_button.style.display = style;
-  copy_info.style.display = 'none';
-  email_info.style.display = 'none';
+
+
+
 }
  $('#text-btn').on('click', function(){
 
