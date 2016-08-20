@@ -225,7 +225,7 @@ function showButtons(style) {
     return;
   }
   current_style = style;
-  copy_button.style.display = style;
+
   email_button.style.display = style;
   copy_info.style.display = 'none';
   email_info.style.display = 'none';
