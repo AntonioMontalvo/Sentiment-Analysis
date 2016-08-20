@@ -10,14 +10,13 @@
     <title>Speak Your Mind</title>
   </head>
   <body>
+
     <div class="row">
       <div class="col-xs-12 text-xs-center">
         <h1 class="text-xs-center jumbotron" id="headline">Speak your mind Demonstration</h1>
       </div>
-
-
-
     </div>
+
 <div class="row">
     <div class="col-xs-12" id="info">
       <p id="info_start">Click on the microphone icon and begin speaking.</p>
@@ -32,7 +31,11 @@
     </div>
 </div>
 
-
+<div id="div_language">
+  <select id="select_language" onchange="updateCountry()"></select>
+  &nbsp;&nbsp;
+  <select id="select_dialect"></select>
+</div>
 <div class="row top margin">
   <div class="col-xs-12">
     <button class="d-block m-x-auto" id="start_button" onclick="startButton(event)">
@@ -65,8 +68,6 @@
   						<h3 class="panel-title">Sentiment Analysis Results</h3>
   					</div>
   					<div class="panel-body" id="sentimentScorePanel">
-
-
   					</div>
   				</div>
   		</div>
