@@ -12,6 +12,11 @@ a:visited {
 a:hover {
   color:#33F;
 }
+
+.top-margin {
+  margin-top: 40px;
+
+}
 .button {
   background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);
   border: 1px solid #076bd2;
@@ -75,4 +80,21 @@ a:hover {
   border: 0;
   background-color:transparent;
   padding: 0;
+}
+
+#go {
+  margin-top: 20px;
+  font-family: 'Michroma', sans-serif;;
+  font-size: 15px;
+  line-height: 75px;
+  border-radius: 15px 5px 15px 5px;
+  text-align: center;
+  height: 75px;
+  width: 150px;
+  background-color: #1ce6b3;
+  -webkit-box-shadow: 10px 10px 50px -20px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 50px -20px rgba(0,0,0,1);
+  box-shadow: 10px 10px 50px -20px rgba(0,0,0,1),
+  inset 0px -3px 6px rgba(0,0,0,0.5), /*bottom internal shadow*/
+  inset 0px 3px 6px rgba(255,255,255,0.8); /*top internal highlight*/
 }
