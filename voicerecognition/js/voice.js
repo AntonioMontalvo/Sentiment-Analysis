@@ -231,7 +231,6 @@ function showButtons(style) {
 
 }
  $('#text-btn').on('click', function(){
-
    $('#retext').append(final_span.textContent);
    $('#retext').append(final_span.textContent);
    $('#retext').val(final_span.textContent);
