@@ -1,6 +1,7 @@
 
  $(".text_process_button").click(function(){
 		var textString = $("#results").val().trim();
+    console.log(textString)
 		console.log(textString);
 
         $.ajax({
